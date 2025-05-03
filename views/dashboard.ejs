@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillSwap Hub Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hero-bg {
+      background-image: url('/images/skill.jpg'); /* Set a custom image URL */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-hover:hover {
+      transform: scale(1.05);
+      background-color: #2563EB;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .card-shadow:hover {
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+  <div class="min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <header class="bg-white shadow">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-gray-700">SkillSwap Hub</h1>
+        <%- include('partials/navbar') %>
+        <span class="text-gray-600">Welcome, <%= user.username %></span>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-24 px-6 text-center flex flex-col justify-center items-center fade-in">
+      <h2 class="text-4xl font-bold leading-tight">Welcome to SkillSwap Hub</h2>
+      <p class="mt-4 text-xl">Connect. Learn. Share. Get Paid.</p>
+      <div class="mt-6 flex space-x-4">
+        <a href="/offer" class="bg-blue-600 hover:bg-blue-500 text-white py-2 px-6 rounded-full btn-hover transition-all">Offer a Skill</a>
+        <a href="/request" class="bg-transparent border-2 border-white hover:bg-blue-600 hover:text-white text-white py-2 px-6 rounded-full btn-hover transition-all">Request Help</a>
+      </div>
+    </section>
+
+    <!-- Dashboard Overview -->
+    <main class="flex-1 p-6 max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Token Balance -->
+        <div class="bg-white p-4 rounded-xl shadow card-hover transition-all">
+          <h2 class="text-gray-700 font-semibold mb-2">Tokens</h2>
+          <p class="text-3xl font-bold text-blue-500"><%= user.tokens %></p>
+        </div>
+
+        <!-- Offer Skill -->
+        <div class="bg-white p-4 rounded-xl shadow card-hover transition-all">
+          <h2 class="text-gray-700 font-semibold mb-2">Offer a Skill</h2>
+          <a href="/offer" class="text-blue-600 underline">Go to Offer Page</a>
+        </div>
+
+        <!-- Request Help -->
+        <div class="bg-white p-4 rounded-xl shadow card-hover transition-all">
+          <h2 class="text-gray-700 font-semibold mb-2">Request Help</h2>
+          <a href="/request" class="text-blue-600 underline">Go to Request Page</a>
+        </div>
+      </div>
+
+      <!-- Notifications & Tasks Panel -->
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Notification 1 -->
+        <div class="bg-yellow-100 p-4 rounded-xl shadow-md flex justify-between items-center card-shadow transition-all">
+          <span class="text-gray-700">You have a new task request.</span>
+          <a href="/request" class="bg-yellow-600 hover:bg-yellow-500 text-white py-1 px-4 rounded-md">View</a>
+        </div>
+
+        <!-- Notification 2 -->
+        <div class="bg-blue-100 p-4 rounded-xl shadow-md flex justify-between items-center card-shadow transition-all">
+          <span class="text-gray-700">Your skill offer has been accepted.</span>
+          <a href="/market" class="bg-blue-600 hover:bg-blue-500 text-white py-1 px-4 rounded-md">View</a>
+        </div>
+
+        <!-- Notification 3 -->
+        <div class="bg-green-100 p-4 rounded-xl shadow-md flex justify-between items-center card-shadow transition-all">
+          <span class="text-gray-700">You have earned new tokens!</span>
+          <a href="/dashboard" class="bg-green-600 hover:bg-green-500 text-white py-1 px-4 rounded-md">View</a>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="mt-8 flex space-x-6">
+        <div class="bg-green-100 p-6 rounded-xl shadow-md text-center card-shadow transition-all">
+          <h3 class="text-lg font-semibold text-green-700">Quick Actions</h3>
+          <div class="flex justify-center space-x-6 mt-4">
+            <a href="/offer" class="bg-green-500 hover:bg-green-400 text-white py-2 px-6 rounded-full">Offer Skill</a>
+            <a href="/request" class="bg-transparent border-2 border-green-500 hover:bg-green-600 hover:text-white text-green-500 py-2 px-6 rounded-full">Request Help</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

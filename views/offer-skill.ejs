@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <title>Offer a Skill</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+  
+  <!-- Navbar -->
+  <header class="bg-white shadow p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-700">Offer Skill</h1>
+    <%- include('partials/navbar') %>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center px-4">
+    <div class="bg-white p-8 rounded-2xl shadow-xl max-w-xl w-full">
+      <h2 class="text-2xl font-bold text-gray-700 mb-4">Offer a New Skill</h2>
+      <p class="text-sm text-gray-500 mb-6">Fill in the form to let others know what you can help with.</p>
+
+      <form action="/offer" method="POST" class="space-y-4">
+        <!-- Skill Title -->
+        <div>
+          <label class="block text-gray-600 font-medium mb-1">Skill Title</label>
+          <input type="text" name="title" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none" required>
+        </div>
+
+        <!-- Description -->
+        <div>
+          <label class="block text-gray-600 font-medium mb-1">Description</label>
+          <textarea name="description" rows="4" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none" placeholder="Briefly explain what you are offering..." required></textarea>
+        </div>
+
+        <!-- Tokens -->
+        <div>
+          <label class="block text-gray-600 font-medium mb-1">Tokens to Charge</label>
+          <input type="number" name="token_value" class="w-full border border-gray-300 rounded-xl px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none" required min="0">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-4">
+          <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-xl hover:bg-blue-700 transition">
+            Offer Skill
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+</body>
+</html>

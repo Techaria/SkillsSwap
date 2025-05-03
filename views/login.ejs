@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/head') %>
+  <title>Login - SkillSwap Hub</title>
+</head>
+<body class="bg-gradient-to-br from-indigo-600 to-blue-400 text-white min-h-screen flex justify-center items-center">
+  <div class="max-w-md w-full p-8 bg-white text-gray-800 rounded-xl shadow-lg">
+    <h2 class="text-3xl font-bold text-center mb-6">Login</h2>
+    <form action="/login" method="POST" class="space-y-6">
+      <div class="space-y-2">
+        <label for="email" class="block text-sm font-semibold">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" class="w-full p-3 border rounded-md" required>
+      </div>
+
+      <div class="space-y-2">
+        <label for="password" class="block text-sm font-semibold">Password</label>
+        <input type="password" id="password" name="password" placeholder="Your Password" class="w-full p-3 border rounded-md" required>
+      </div>
+
+      <button type="submit" class="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">Login</button>
+
+      <div class="text-center text-sm mt-4">
+        <p class="text-gray-600">Don't have an account? <a href="/signup" class="text-indigo-600 hover:text-indigo-700">Sign Up</a></p>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
