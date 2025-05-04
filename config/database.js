@@ -1,23 +1,22 @@
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASS,
+  'sql12776793', // your DB name
+  'sql12776793', // your username
+  'BRah1V7Eva', // your password
   {
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT || 3306,
+    host: 'sql12.freesqldatabase.com', // your host
+    port: 3306, // default MySQL port
     dialect: 'mysql',
-    logging: false, // optional: turn off SQL logs
+    dialectOptions: {
+      ssl: { rejectUnauthorized: false } // avoid SSL issues
+    }
   }
 );
 
 sequelize.authenticate()
-  .then(() => {
-    console.log('✅ Connected to MySQL using Sequelize');
-  })
-  .catch((err) => {
-    console.error('❌ Error connecting to MySQL:', err);
-  });
+  .then(() => console.log('Connected to MySQL (FreeSQLDatabase.com)'))
+  .catch((err) => console.error('Connection error:', err));
 
 module.exports = sequelize;
+
