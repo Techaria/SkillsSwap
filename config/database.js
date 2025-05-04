@@ -8,9 +8,6 @@ const sequelize = new Sequelize(
     host: 'sql12.freesqldatabase.com', // your host
     port: 3306, // default MySQL port
     dialect: 'mysql',
-    dialectOptions: {
-      ssl: { rejectUnauthorized: false } // avoid SSL issues
-    }
   }
 );
 
