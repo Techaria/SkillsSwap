@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name:SkillsSwap
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    repo: https://github.com/Lewis/SkillsSwap
+    branch: main
+    autoDeploy: true
