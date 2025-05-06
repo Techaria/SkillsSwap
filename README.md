@@ -1,6 +1,6 @@
-# Skillsswap
+# Skillswap
 
-**Skillsswap** is a collaborative platform where users can exchange skills with others in a mutually beneficial way. Whether you're looking to learn graphic design in return for teaching Spanish, or want to swap fitness coaching for web development help—Skillsswap makes it possible.
+**Skillswap** is a collaborative platform where users can exchange skills with others in a mutually beneficial way. Whether you're looking to learn graphic design in return for teaching Spanish, or want to swap fitness coaching for web development help—Skillsswap makes it possible.
 
 ## Features
 
